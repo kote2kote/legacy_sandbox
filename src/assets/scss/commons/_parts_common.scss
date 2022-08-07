@@ -1,0 +1,41 @@
+@use '../variables' as var;
+@use 'functions' as fn;
+@use 'mixins' as mix;
+// ==================================================
+// head common
+// ==================================================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-weight: normal;
+  font-family: var.$v-font;
+  // font-weight: 900;
+  // font-family: 'Noto Sans JP', sans-serif;
+  color: var.$v-color-font;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+  text-rendering: optimizeLegibility;
+  background: var.$v-color-bg no-repeat;
+  word-wrap: break-word;
+  font-size: var.$v-font-size-default + px;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+a {
+  transition: all 0.3s ease;
+  text-decoration: underline;
+  color: var.$v-color-link;
+  &:hover {
+    color: var.$v-color-hover-link;
+  }
+}
+
+p {
+  padding-bottom: 1rem;
+}

@@ -1,0 +1,22 @@
+// variables
+// @forward 'variables';
+// @forward 'commons/functions';
+// @forward 'commons/mixins';
+
+// // common
+@forward 'commons/fonts';
+@forward 'commons/common';
+@forward 'commons/parts_common';
+
+// // utiles
+@forward 'utils/form_reset';
+
+// // pages
+@forward 'pages/main';
+
+// // test
+@forward 'test/main';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

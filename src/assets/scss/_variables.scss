@@ -1,0 +1,77 @@
+// ==================================================
+// variables
+// ==================================================
+
+// -- color --------------------
+// 必須
+$v-color-font: #000;
+$v-color-bg: #fff;
+$v-color-link: #3272dc;
+$v-color-hover-link: #699df2;
+
+// パーツ別カラー
+$v-color-01: #111827;
+$v-color-02: #111827;
+$v-color-03: #152cf4;
+$v-color-04: #f4f4f4;
+$v-color-05: #7e7e7e;
+$v-color-06: #e2e2e2;
+$v-color-07: #f5f5f5;
+$v-color-08: #fff;
+$v-color-09: #fff;
+$v-color-10: #fff;
+
+// よく使う
+// .v-color-title-blue {
+//   color: $v-color-02;
+// }
+// .v-bgcolor-title-blue {
+//   background-color: $v-color-02;
+// }
+// @mixin v-color-title-blue {
+//   color: $v-color-02;
+// }
+// @mixin v-bgcolor-title-blue {
+//   background-color: $v-color-02;
+// }
+
+// -- font --------------------
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap');
+.v-font-robot {
+  font-family: 'Roboto', sans-serif;
+}
+.v-font-noto {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+@mixin v-font-noto {
+  font-family: 'Roboto', sans-serif;
+}
+// @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap');
+
+$v-font-sans-serif: 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+  'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
+$v-font-serif: 'Times New Roman', 'YuMincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho',
+  serif;
+$v-font-size-default: 16;
+$v-font: $v-font-sans-serif;
+
+// -- design width --------------------
+$v-design-sp: 375; // スマホ最小幅
+$v-design-tb: 750; // スマホデザイン分岐点
+$v-design-pc: 1366; // PC最大幅
+
+// -- breakpoints --------------------
+$v-bp: (
+  sp: 428,
+  tb: 600,
+  pc: 1024,
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  wide: 1536,
+) !default;
+
+// -- image directory --------------------
+$imgDir: '/assets'; // 本番
+// $imgDir: '/hakoda'; // チェック
