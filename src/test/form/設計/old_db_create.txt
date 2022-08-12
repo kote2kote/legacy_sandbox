@@ -1,0 +1,156 @@
+drop database form_test2;
+create database form_test2;
+
+GRANT ALL PRIVILEGES ON form_test2.* TO test@localhost IDENTIFIED BY 'test';
+
+
+CREATE TABLE formdata1 (
+  id int NOT NULL auto_increment,
+  name varchar(40) NOT NULL,
+  zipcode1 varchar(20) default NULL,
+  zipcode2 varchar(20) default NULL,
+  adress1 varchar(40) default NULL,
+  adress2 varchar(100) default NULL,
+  adress3 varchar(60) default NULL,
+  email varchar(60) NOT NULL,
+  faq_categoly int NOT NULL,
+  faq_naiyou varchar(500) NOT NULL,
+  notes varchar(3000) default NULL,
+  modified int NOT NULL,
+  created int NOT NULL,
+  PRIMARY KEY  (id)
+) TYPE=MyISAM;
+
+
+
+INSERT INTO
+  formdata1
+  (
+    name,
+    zipcode1,
+    zipcode2,
+    adress1,
+    adress2,
+    adress3,
+    email,
+    faq_categoly,
+    faq_naiyou,
+    notes,
+    modified,
+    created
+  )
+VALUES
+  (
+    'てすと君',
+    '222',
+    '2222',
+    '東京都',
+    '港区南青山8-8-8',
+    'ジョワレ',
+    'puludog@nifty.com',
+    '1',
+    '質問内容テキスト質問内容テキスト質問内容テキスト質問内容テキスト質問内容テキスト質問内容テキスト',
+    '初音ミクニュース関連特集あり',
+    '1197734728',
+    '1197734728'
+  )
+;
+
+
+CREATE TABLE shurui1 (
+  id int NOT NULL auto_increment,
+  shurui varchar(100) NOT NULL,
+  order_num int NOT NULL,
+  notes varchar(3000) default NULL,
+  modified int NOT NULL,
+  created int NOT NULL,
+  PRIMARY KEY  (id)
+) TYPE=MyISAM;
+
+
+
+INSERT INTO
+  shurui1
+  (
+    shurui,
+    order_num,
+    notes,
+    modified,
+    created
+  )
+VALUES
+  (
+    'このサイトについてのお問い合わせ',
+    '1',
+    '備考',
+    '1197734728',
+    '1197734728'
+  )
+;
+
+INSERT INTO
+  shurui1
+  (
+    shurui,
+    order_num,
+    notes,
+    modified,
+    created
+  )
+VALUES
+  (
+    '弊社の業務内容についてのお問い合わせ',
+    '2',
+    '備考',
+    '1197734728',
+    '1197734728'
+  )
+;
+
+INSERT INTO
+  shurui1
+  (
+    shurui,
+    order_num,
+    notes,
+    modified,
+    created
+  )
+VALUES
+  (
+    'その他のお問い合わせ',
+    '3',
+    '備考',
+    '1197734728',
+    '1197734728'
+  )
+;
+
+CREATE TABLE login (
+  id int NOT NULL auto_increment,
+  username varchar(100) NOT NULL,
+  password varchar(100) NOT NULL,
+  notes varchar(3000) default NULL,
+  modified int NOT NULL,
+  created int NOT NULL,
+  PRIMARY KEY  (id)
+) TYPE=MyISAM;
+
+INSERT INTO
+  login
+  (
+    username,
+    password,
+    notes,
+    modified,
+    created
+  )
+VALUES
+  (
+    'test',
+    'test',
+    '備考',
+    '1197734728',
+    '1197734728'
+  )
+;

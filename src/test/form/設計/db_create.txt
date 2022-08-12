@@ -1,0 +1,133 @@
+DROP DATABASE form_test2;
+CREATE DATABASE form_test2;
+
+GRANT ALL PRIVILEGES ON form_test2.* TO kote2@localhost IDENTIFIED BY '09pulu07';
+
+
+// adminerのSQLコマンド
+CREATE TABLE IF NOT EXISTS formdata1 (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(20) NOT NULL,
+  zipcode1 VARCHAR(20) DEFAULT NULL,
+  zipcode2 VARCHAR(20) DEFAULT NULL,
+  adress1 VARCHAR(40) DEFAULT NULL,
+  adress2 VARCHAR(100) DEFAULT NULL,
+  adress3 VARCHAR(60) DEFAULT NULL,
+  email VARCHAR(60) NOT NULL,
+  faq_categoly INT NOT NULL,
+  faq_naiyou VARCHAR(500) NOT NULL,
+  notes VARCHAR(3000) DEFAULT NULL,
+  modified INT NOT NULL,
+  created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=INNODB;
+
+
+INSERT INTO
+  formdata1
+  (
+    name,
+    zipcode1,
+    zipcode2,
+    adress1,
+    adress2,
+    adress3,
+    email,
+    faq_categoly,
+    faq_naiyou,
+    notes
+  )
+VALUES
+  (
+    'てすと君',
+    '222',
+    '2222',
+    '東京都',
+    '港区南青山8-8-8',
+    'ジョワレ',
+    'puludog@nifty.com',
+    '1',
+    '質問内容テキスト質問内容テキスト質問内容テキスト質問内容テキスト質問内容テキスト質問内容テキスト',
+    '初音ミクニュース関連特集あり'
+  )
+;
+
+
+CREATE TABLE IF NOT EXISTS  shurui1 (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  shurui VARCHAR(100) NOT NULL,
+  order_num INT NOT NULL,
+  notes VARCHAR(3000) DEFAULT NULL,
+  modified INT NOT NULL,
+  created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=INNODB;
+
+
+
+INSERT INTO
+  shurui1
+  (
+    shurui,
+    order_num,
+    notes
+  )
+VALUES
+  (
+    'このサイトについてのお問い合わせ',
+    '1',
+    '備考'
+  )
+;
+
+INSERT INTO
+  shurui1
+  (
+    shurui,
+    order_num,
+    notes
+  )
+VALUES
+  (
+    '弊社の業務内容についてのお問い合わせ',
+    '2',
+    '備考'
+  )
+;
+
+INSERT INTO
+  shurui1
+  (
+    shurui,
+    order_num,
+    notes
+  )
+VALUES
+  (
+    'その他のお問い合わせ',
+    '3',
+    '備考'
+  )
+;
+
+CREATE TABLE IF NOT EXISTS login (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  notes VARCHAR(3000) DEFAULT NULL,
+  modified INT NOT NULL,
+  created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=INNODB;
+
+INSERT INTO
+  login
+  (
+    username,
+    password,
+    notes
+  )
+VALUES
+  (
+    'test',
+    'test',
+    '備考'
+  )
+;

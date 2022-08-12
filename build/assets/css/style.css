@@ -926,6 +926,25 @@ select {
   visibility: visible;
 }
 
+#Body.test-form form .btn {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  background-color: #ddd;
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+  cursor: pointer;
+}
+#Body.test-form form .btn:disabled,
+#Body.test-form form .btn:disabled:hover,
+#Body.test-form form .btn:disabled:active {
+  background-color: #ccc;
+  color: #292929;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
 .pace-done .test_effects-loading .first-cover {
   transform: scale(0, 1);
 }
@@ -1519,6 +1538,12 @@ video {
     max-width: 1536px;
   }
 }
+.visible{
+  visibility: visible;
+}
+.static{
+  position: static;
+}
 .fixed{
   position: fixed;
 }
@@ -1543,6 +1568,9 @@ video {
 .-m-9{
   margin: -2.25rem;
 }
+.m-0{
+  margin: 0px;
+}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -1551,11 +1579,18 @@ video {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-.mb-20{
-  margin-bottom: 5rem;
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .mb-4{
   margin-bottom: 1rem;
+}
+.mr-4{
+  margin-right: 1rem;
+}
+.mb-20{
+  margin-bottom: 5rem;
 }
 .mb-5{
   margin-bottom: 1.25rem;
@@ -1572,17 +1607,41 @@ video {
 .mb-8{
   margin-bottom: 2rem;
 }
+.mb-0{
+  margin-bottom: 0px;
+}
+.mr-auto{
+  margin-right: auto;
+}
+.ml-auto{
+  margin-left: auto;
+}
+.block{
+  display: block;
+}
 .inline-block{
   display: inline-block;
 }
+.inline{
+  display: inline;
+}
 .flex{
   display: flex;
+}
+.table{
+  display: table;
+}
+.contents{
+  display: contents;
 }
 .hidden{
   display: none;
 }
 .h-64{
   height: 16rem;
+}
+.h-24{
+  height: 6rem;
 }
 .h-40{
   height: 10rem;
@@ -1604,6 +1663,9 @@ video {
 }
 .w-1\/2{
   width: 50%;
+}
+.w-64{
+  width: 16rem;
 }
 .w-10{
   width: 2.5rem;
@@ -1629,6 +1691,11 @@ video {
 .overflow-hidden{
   overflow: hidden;
 }
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .rounded-xl{
   border-radius: 0.75rem;
 }
@@ -1647,6 +1714,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
 .p-9{
   padding: 2.25rem;
 }
@@ -1656,9 +1727,23 @@ video {
 .p-1{
   padding: 0.25rem;
 }
+.p-0{
+  padding: 0px;
+}
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .px-4{
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.pb-8{
+  padding-bottom: 2rem;
 }
 .pt-20{
   padding-top: 5rem;
@@ -1677,6 +1762,9 @@ video {
 }
 .text-center{
   text-align: center;
+}
+.align-baseline{
+  vertical-align: baseline;
 }
 .text-6xl{
   font-size: 3.75rem;
@@ -1698,17 +1786,23 @@ video {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+.font-bold{
+  font-weight: 700;
+}
 .font-semibold{
   font-weight: 600;
 }
 .font-medium{
   font-weight: 500;
 }
-.font-bold{
-  font-weight: 700;
-}
 .uppercase{
   text-transform: uppercase;
+}
+.lowercase{
+  text-transform: lowercase;
+}
+.capitalize{
+  text-transform: capitalize;
 }
 .text-gray-900{
   --tw-text-opacity: 1;
@@ -1729,6 +1823,22 @@ video {
 .text-red-900{
   --tw-text-opacity: 1;
   color: rgb(127 29 29 / var(--tw-text-opacity));
+}
+.underline{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.shadow-sm{
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .transition{
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
@@ -2046,6 +2156,25 @@ video {
 #Body.test-template .el_scroll-top-btn.is-active {
   opacity: 1;
   visibility: visible;
+}
+
+#Body.test-form form .btn {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  background-color: #ddd;
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+  cursor: pointer;
+}
+#Body.test-form form .btn:disabled,
+#Body.test-form form .btn:disabled:hover,
+#Body.test-form form .btn:disabled:active {
+  background-color: #ccc;
+  color: #292929;
+  border-color: #ccc;
+  cursor: not-allowed;
 }
 
 .pace-done .test_effects-loading .first-cover {

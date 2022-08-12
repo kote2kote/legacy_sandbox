@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="format-detection" content="email=no,telephone=no,address=no" />
+    <meta name="description" content=""/>
+    <title>starter</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+
+  <body id="Body" class="test-template">
+    <header class="cm h-40 w-full fixed">
+      <div class="inner h-full relative">
+        <!-- ハンバーガーボタン -->
+        <div :class="isHumOpen && 'is-active'" class="outer_hamburger-btn absolute top-0 right-0 inline-block bg-black p-4">
+          <a @click="openMenu" class="el_hamburger-btn js_action cursor-pointer inline-block bg-black">
+            <span class="el_icon-hamburger relative"></span>
+          </a>
+          <span class="el_hamburger-on-text text-red-500 ">ON</span>
+          <span class="el_hamburger-off-text text-white ">OFF</span>
+        </div>
+        <!-- // ハンバーガーボタン -->
+        <div :class="{'is-active': isHumOpen}" class="outer_sp-menu bg-black text-white overflow-hidden">
+          <nav class="flex justify-center items-center">
+            <ul>
+              <li>menu1</li>
+              <li>menu2</li>
+              <li>menu3</li>
+              <li>menu4</li>
+              <li>menu5</li>
+              <li>menu6</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+<section id="Section00">
+  <div class="inner min-h-screen">
+    <div class="text-4xl font-bold pt-48 text-center">Section00</div>
+
+    <!-- simple tab
+    ------------------------------------------------------->
+    <h3 class="com_h w-1/2 pt-12 mx-auto">simple tab</h3>
+    <div class="w-1/2 mx-auto">
+      <dl class="el_tab">
+        <dt @click="openTabSimple(0)" class="p-1 bg-gray-200 font-semibold cursor-pointer">ソフトドリンク</dt>
+        <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
+        <dd v-if="isTabOpenSimple[0]" class="el_dd overflow-hidden px-4">一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料一般の飲料</dd>
+
+      </transition>
+
+        <dt @click="openTabSimple(1)" class="p-1 bg-gray-200 font-semibold cursor-pointer"> お酒</dt>
+        <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
+        <dd v-if="isTabOpenSimple[1]" class="el_dd overflow-hidden">アルコール入り飲料アルコール入り飲料アルコール入り飲料アルコール入り飲料アルコール入り飲料アルコール入り飲料アルコール入り飲料</dd>
+      </transition>
+        </dl>
+    </div>
+
+    <!-- json tab
+    ------------------------------------------------------->
+    <h3 class="com_h w-1/2 pt-12 mx-auto mt-12">json tab</h3>
+    <div class="w-1/2 mx-auto">
+      <dl class="el_tab">
+        <template v-for="(n, index) in dammyPost"  :key="n.id">
+        <dt @click="openTabJson(index)" class="p-1 bg-gray-200 font-semibold cursor-pointer">{{n.title}}{{isTabOpen}}</dt>
+        <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
+        <dd v-if="isTabOpenJson[index]" class="el_dd overflow-hidden px-4">{{n.post}}</dd>
+      </transition>
+      </template>
+      
+        </dl>
+    </div>
+
+    <!-- wp tab
+    ------------------------------------------------------->
+    <h3 class="com_h w-1/2 pt-12 mx-auto mt-12">wp tab</h3>
+    <div class="w-1/2 mx-auto">
+      <dl class="el_tab">
+        <template v-for="(n, index) in wpPosts"  :key="n.id">
+        <dt @click="openTabWP(index)" class="p-1 bg-gray-200 font-semibold cursor-pointer">{{n.title.rendered}}</dt>
+        <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
+        <dd v-if="isTabOpenWP[index]"  class="el_dd overflow-hidden px-4" v-html="n.excerpt.rendered"></dd>
+      </transition>
+      </template>
+      
+        </dl>
+    </div>
+  </div>
+</section>
+<section id="Section01">
+  <div class="inner h-screen flex justify-center items-center">
+    <span class="text-4xl font-bold">Section01</span>
+  </div>
+</section>
+
+<section id="Section02">
+  <div class="inner h-screen flex justify-center items-center bg-gray-200">
+    <span class="text-4xl font-bold ">Section02</span>
+  </div>
+</section>
+
+<section id="Section03">
+  <div class="inner h-screen flex justify-center items-center">
+    <span class="text-4xl font-bold">Section03</span>
+  </div>
+</section>
+<section id="Section04">
+  <div class="inner h-screen flex justify-center items-center bg-gray-200">
+    <span class="text-4xl font-bold">Section04</span>
+  </div>
+</section>
+    </main>
+    <footer class="cm h-40">ここはhtmlのフッターです</footer>
+    <div id="scrollTop">
+    <a href="#Body" ref="scrollTop" :class="isActive && 'is-active'"  class="el_scroll-top-btn z-50 fixed bottom-0 right-0 h-10 w-10 mr-8 mb-8 pc:h-12 pc:w-12 pc:mr-12 pc:mb-12 bg-black text-white flex items-center justify-center cursor-pointer">▲</a>
+  </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script> -->
+    <script src="/assets/js/single/test/template.js"></script>
+  </body>
+</html>

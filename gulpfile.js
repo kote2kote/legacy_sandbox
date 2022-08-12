@@ -31,8 +31,8 @@ function livePreview() {
       base: `${config.paths.build}`,
       port: config.port,
       keepalive: true,
-      bin: '/Applications/MAMP/bin/php/php7.2.8/bin/php',
-      ini: '/Applications/MAMP/bin/php/php7.2.8/conf/php.ini',
+      bin: '/Applications/MAMP/bin/php/php8.0.8/bin/php',
+      ini: '/Applications/MAMP/bin/php/php8.0.8/conf/php.ini',
     },
     function () {
       browserSync({

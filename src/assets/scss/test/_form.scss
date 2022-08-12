@@ -1,0 +1,22 @@
+#Body.test-form {
+  form {
+    .btn {
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      color: white;
+      border-radius: 0.5rem;
+      background-color: #ddd;
+      --tw-bg-opacity: 1;
+      background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+      cursor: pointer;
+    }
+    .btn:disabled,
+    .btn:disabled:hover,
+    .btn:disabled:active {
+      background-color: #ccc;
+      color: #292929;
+      border-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}

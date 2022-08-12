@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/*************************************************************
+3カラムレイアウト
+*************************************************************/
+#box_ab{
+float:left;
+width:600px;
+}
+
+#box_a {
+float:left;
+background-color:#FFBFDF;
+width: 300px;
+/*
+padding-left:8px;
+*/
+}
+
+#box_b {
+float:right;
+background-color:#D7FFD7;
+width:300px;
+/*
+padding-right:8px;
+*/
+}
+
+#box_c {
+float:right;
+background-color: #C7D5ED;
+width:200px;
+/*
+padding-right:8px;
+*/
+}
+
+/*************************************************************
+2カラムレイアウト用
+*************************************************************/
+#box_left {
+float:left;
+/*background-color:#FFBFDF;*/
+width: 10%;
+/*
+padding-left:8px;
+*/
+}
+#subbox_left{
+padding-left:20px;
+}
+#box_right {
+float:right;
+/*background-color: #C7D5ED;*/
+width:90%;
+/*
+padding-right:8px;
+*/
+}
+#subbox_right{
+padding-right:20px;
+}

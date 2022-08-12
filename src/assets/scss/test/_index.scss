@@ -1,0 +1,53 @@
+@use '../variables' as var;
+@use '../commons/functions' as fn;
+@use '../commons/mixins' as mix;
+
+.out_test-index {
+  .swiper-container2 {
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      color: #000;
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.2);
+      &-active {
+        color: #fff;
+        background: #007aff;
+      }
+    }
+  }
+  // .swiper {
+  //   width: 100%;
+  //   height: 100%;
+  // }
+
+  // .swiper-slide {
+  //   text-align: center;
+  //   font-size: 18px;
+  //   background: #fff;
+
+  //   /* Center slide text vertically */
+  //   display: -webkit-box;
+  //   display: -ms-flexbox;
+  //   display: -webkit-flex;
+  //   display: flex;
+  //   -webkit-box-pack: center;
+  //   -ms-flex-pack: center;
+  //   -webkit-justify-content: center;
+  //   justify-content: center;
+  //   -webkit-box-align: center;
+  //   -ms-flex-align: center;
+  //   -webkit-align-items: center;
+  //   align-items: center;
+  // }
+
+  // .swiper-slide img {
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  // }
+}

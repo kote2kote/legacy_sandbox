@@ -1,0 +1,72 @@
+@use '../../variables' as var;
+@use '../../commons/functions';
+@use '../../commons/mixins' as mix;
+
+.pace-done .test_effects-loading .first-cover {
+  transform: scale(0, 1);
+  // transform-origin: center right;
+}
+// -- ローディングのテキスト表示(%) --------------------
+//全体の表示領域
+.pace {
+  z-index: 2000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  // background: #666;
+}
+
+//プログレスバー
+.pace .pace-progress {
+  transform: none !important;
+  text-align: center;
+  background: #ddd;
+  transition: all 0.5s;
+  position: relative;
+  // width: 100vw;
+}
+
+//ローディング数字(%)
+.pace .pace-progress::after {
+  content: attr(data-progress-text); //ここで表示形式を設定
+  display: block;
+  font-weight: 100;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', 'Yu Gothic', 'Meiryo', sans-serif;
+  color: #000;
+  width: 100vw;
+  // position: absolute;
+  // left: 50%;
+}
+.test_effects-loading {
+  // .pace-running .wrapper {
+  //   opacity: 0;
+  //   visibility: hidden;
+  // }
+  // .wrapper {
+  //   transition: opacity 2s;
+  // }
+
+  // .pace-running .first-cover {
+  //   transform: scale(1, 1);
+  // transform-origin: center right;
+  // }
+  img {
+    @apply h-screen;
+  }
+  .first-cover {
+    transform: scale(1, 1);
+    transform-origin: center right;
+    transition: all 2s;
+  }
+  // .pace-done .first-cover {
+  //   transform: scale(0, 1);
+  //   // transform-origin: center right;
+  // }
+}

@@ -1,0 +1,149 @@
+@use '../variables' as var;
+@use '../commons/functions' as fn;
+@use '../commons/mixins' as mix;
+
+#Body.test-template {
+  #Section00 {
+    .el_tab {
+      .el_dd {
+        // height: 0;
+        // display: none;
+        // opacity: 0;
+        // visibility: hidden;
+        transition: all 0.3s ease;
+        @apply py-4;
+
+        &.is-active {
+          // height: 100%;
+          // display: block;
+          // visibility: visible;
+          // opacity: 1;
+        }
+      }
+    }
+    // .v-enter-from,
+    // .v-leave-to {
+    //   // height: 0;
+    //   opacity: 0;
+    //   // visibility: hidden;
+    // }
+    // .v-enter-active,
+    // .v-leave-active {
+    //   transition: all 0.3s ease;
+    // }
+    // .v-enter-to,
+    // .v-leave-from {
+    //   // height: 10vh;
+    //   opacity: 1;
+    //   // visibility: visible;
+    // }
+
+    // .v-enter-active {
+    //   animation-duration: 1s;
+    //   animation-fill-mode: both;
+    //   animation-name: js-accordion--anime__opend;
+    // }
+    // .v-leave-from {
+    //   animation-duration: 1s;
+    //   animation-fill-mode: both;
+    //   animation-name: js-accordion--anime__closed;
+    // }
+    // @keyframes js-accordion--anime__opend {
+    //   0% {
+    //     opacity: 0;
+    //     background-color: rgb(132, 37, 37);
+    //   }
+    //   100% {
+    //     opacity: 1;
+    //     background-color: rgb(0, 0, 0);
+    //   }
+    // }
+    // @keyframes js-accordion--anime__closed {
+    //   0% {
+    //     opacity: 1;
+    //     background-color: rgb(0, 0, 0);
+    //   }
+
+    //   100% {
+    //     opacity: 0;
+    //     background-color: rgb(0, 0, 0);
+    //   }
+    // }
+  }
+  header {
+    .outer_hamburger-btn {
+      .el_hamburger-btn {
+        outline: none; // tailwindのoutline-noneが効かない
+        height: 2rem;
+
+        .el_icon-hamburger,
+        .el_icon-hamburger::before,
+        .el_icon-hamburger::after {
+          width: 3rem;
+          height: 2px;
+          display: inline-block;
+          background-color: #fff;
+        }
+        .el_icon-hamburger::before,
+        .el_icon-hamburger::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: all 0.2s;
+        }
+        .el_icon-hamburger::before {
+          top: -0.8rem;
+        }
+        .el_icon-hamburger::after {
+          top: 0.8rem;
+        }
+      }
+      .el_hamburger-on-text {
+        display: none;
+      }
+      .el_hamburger-off-text {
+        display: block;
+      }
+      &.is-active {
+        .el_hamburger-btn {
+          .el_icon-hamburger {
+            background-color: transparent;
+          }
+          .el_icon-hamburger::before {
+            top: 0;
+            transform: rotate(135deg);
+          }
+          .el_icon-hamburger::after {
+            top: 0;
+            transform: rotate(-135deg);
+          }
+        }
+
+        .el_hamburger-on-text {
+          display: block;
+        }
+        .el_hamburger-off-text {
+          display: none;
+        }
+      }
+    }
+    .outer_sp-menu {
+      height: 0vh;
+      transition: all 0.3s ease;
+      &.is-active {
+        height: 100vh;
+      }
+    }
+  }
+
+  .el_scroll-top-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
